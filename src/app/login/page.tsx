@@ -13,12 +13,32 @@ const Page = () => {
   const router = useRouter();
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-  const handleLogin = (e: any) => {
+  const [motherName, setMotherName] = useState("");
+  const [loveName, setLoveName] = useState("");
+  const [importantName, setImportantName] = useState("");
+  const [petName, setPetName] = useState("");
+  const [toggleNextStep, setToggleNextStep] = useState(false);
+
+  const handleNextStep = (e: any) => {
     e.preventDefault();
     if (username === "mikayla15267" && password === "Mikaylaloveschad24#") {
-      router.push("/account");
+      setToggleNextStep(true);
     } else {
       toast.error("Password or username incorrect");
+    }
+  };
+
+  const handleLogin = (e: any) => {
+    e.preventDefault();
+    if (
+      motherName === "Herrick" &&
+      loveName === "Chad" &&
+      importantName === "Daria's" &&
+      petName === "Poochie"
+    ) {
+      router.push("/account");
+    } else {
+      toast.error("Incorrect details");
     }
   };
 
@@ -28,6 +48,19 @@ const Page = () => {
   const handlePassword = (e: any) => {
     setPassword(e.target.value);
   };
+  const handleMotherName = (e: any) => {
+    setMotherName(e.target.value);
+  };
+  const handleLoveName = (e: any) => {
+    setLoveName(e.target.value);
+  };
+  const handleImportantName = (e: any) => {
+    setImportantName(e.target.value);
+  };
+  const handlePetName = (e: any) => {
+    setPetName(e.target.value);
+  };
+
   return (
     <main className="fixed flex items-center justify-center top-0 bottom-0 left-0 right-0 bg-[#F8F2F2]">
       <section className="hidden lg:flex w-[55%]">
@@ -100,12 +133,71 @@ const Page = () => {
           </div>
           <button
             className="bg-gradient-to-b to-[#007B55] from-[#459A3A] flex items-center h-10 justify-center gap-x-2 rounded-lg text-white"
-            onClick={handleLogin}
+            onClick={handleNextStep}
           >
             {" "}
-            <span className="">Login</span>
+            <span className="">Next Step</span>
             <FaCircleArrowRight className="" />
           </button>
+          {toggleNextStep && (
+            <div className="w-screen min-h-screen backdrop-blur-[7px] bg-[#0D1012B2] absolute top-0 left-0 z-50 flex items-center justify-center">
+              <div className="bg-white max-w-[500px] p-5 rounded-lg">
+                <h3 className="text-2xl font-semibold mb-5">
+                  Security Questions
+                </h3>
+                <div className="flex flex-col mb-5">
+                  <label htmlFor="" className="">
+                    1. What is your mother&apos;s maiden name?
+                  </label>
+                  <input
+                    type="text"
+                    value={motherName}
+                    onChange={handleMotherName}
+                    className="pl-2 border-[1px] border-black h-10 rounded-md mt-1"
+                  />
+                </div>
+                <div className="flex flex-col mb-5">
+                  <label htmlFor="">
+                    2. What is the name of the current love of your life?
+                  </label>
+                  <input
+                    type="text"
+                    value={loveName}
+                    onChange={handleLoveName}
+                    className="pl-2 border-[1px] border-black h-10 rounded-md mt-1"
+                  />
+                </div>
+                <div className="flex flex-col mb-5">
+                  <label htmlFor="">
+                    3. What is the name of the most important person to you?
+                  </label>
+                  <input
+                    type="text"
+                    value={importantName}
+                    onChange={handleImportantName}
+                    className="pl-2 border-[1px] border-black h-10 rounded-md mt-1"
+                  />
+                </div>
+                <div className="flex flex-col mb-5">
+                  <label htmlFor="">4. What is the name of your pet?</label>
+                  <input
+                    type="text"
+                    value={petName}
+                    onChange={handlePetName}
+                    className="pl-2 border-[1px] border-black h-10 rounded-md mt-1"
+                  />
+                </div>
+                <button
+                  className="bg-gradient-to-b to-[#007B55] from-[#459A3A] flex items-center h-10 w-full justify-center gap-x-2 rounded-lg text-white"
+                  onClick={handleLogin}
+                >
+                  {" "}
+                  <span className="">Login</span>
+                  <FaCircleArrowRight className="" />
+                </button>
+              </div>
+            </div>
+          )}
         </form>
         <div className="flex flex-col lg:w-[80%] lg:mx-auto">
           <span>Help with User ID or Passcode</span>

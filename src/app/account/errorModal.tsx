@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { RiErrorWarningLine } from "react-icons/ri";
 import { BiSolidErrorCircle } from "react-icons/bi";
 
-
 type props = {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -18,7 +17,7 @@ const ErrorModal: React.FC<props> = ({ showModal, setShowModal }) => {
           </span>
           <span className="text-red-500 px-10 ">
             You have an{" "}
-            <span className="font-bold">outstanding bill of $9,235.42 !</span>
+            <span className="font-bold">outstanding bill of $13,236.57!</span>
           </span>
         </section>
       </div>
