@@ -11,6 +11,8 @@ import { FaPiggyBank } from "react-icons/fa6";
 import { CiCreditCard1 } from "react-icons/ci";
 import { BsBank } from "react-icons/bs";
 import { RiCoinsFill } from "react-icons/ri";
+import { LiaDigitalTachographSolid } from "react-icons/lia";
+import { MdOutlinePayments } from "react-icons/md";
 
 export default function Home() {
   const currentYear = new Date().getFullYear();
@@ -56,7 +58,8 @@ export default function Home() {
         </article>
         <article className="lg:w-[50%]">
           <div className="grid grid-cols-3 text-sm text-center text-[#2E9175]">
-            <div className="border border-t-0 border-l-0 flex items-center justify-center h-20">
+            <div className="border border-t-0 border-l-0 flex items-center justify-center h-20 flex-col">
+              <LiaDigitalTachographSolid className="text-2xl"/>
               <span className="text-sm">Cheques</span>
             </div>
             <div className="border border-t-0 flex flex-col items-center justify-center">
@@ -75,7 +78,8 @@ export default function Home() {
               <BsBank className="text-xl" />
               <span className="text-sm">Investments & Insurance</span>
             </div>
-            <div className="border border-b-0 border-r-0 flex items-center justify-center h-20">
+            <div className="border border-b-0 border-r-0 flex  flex-col items-center justify-center h-20">
+              <MdOutlinePayments className="text-2xl"/>
               <span className="text-sm">Digital Banking</span>
             </div>
           </div>
@@ -121,16 +125,16 @@ export default function Home() {
             banking experience with you in mind.
           </p>
         </article>
-        <article className="flex lg:flex-row flex-col lg:justify-between gap-y-10 items-center text-[#2E9175]">
-          <div className="flex flex-col lg:items-start text-center  gap-y-2  lg:w-[33%]">
+        <article className="flex lg:flex-row flex-col lg:justify-center gap-y-10 items-center  text-[#2E9175] lg:items-center">
+          <div className="flex flex-col  text-center  gap-y-2  lg:w-[33%]">
             <span className="lg:text-xl text-2xl">$34.9 million</span>
             <span className="text-xs">IN LOCAL GRANTS</span>
           </div>
-          <div className="flex flex-col lg:items-start text-center  gap-y-2  lg:w-[33%] ">
+          <div className="flex flex-col  lg:border-l-2 lg:border-r-2 text-center  gap-y-2  lg:w-[33%] ">
             <span className="lg:text-xl text-2xl">$1.6 billion</span>
             <span className="text-xs">IN LOCAL GRANTS</span>
           </div>
-          <div className="flex flex-col lg:items-start text-center  gap-y-2  lg:w-[33%]">
+          <div className="flex flex-col  text-center  gap-y-2  lg:w-[33%]">
             <span className="lg:text-xl text-2xl">{">"}50,000</span>
             <span className="text-xs">IN LOCAL GRANTS</span>
           </div>

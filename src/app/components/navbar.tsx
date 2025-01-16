@@ -54,12 +54,12 @@ const Navbar = () => {
       </article>
       {showNav ? (
         <FaXmark
-          className="lg:hidden block ml-44 cursor-pointer"
+          className="lg:hidden text-xl block ml-44 cursor-pointer"
           onClick={handleShowNav}
         />
       ) : (
         <GiHamburgerMenu
-          className="lg:hidden block ml-44 cursor-pointer"
+          className="lg:hidden text-xl block ml-44 cursor-pointer"
           onClick={handleShowNav}
         />
       )}
