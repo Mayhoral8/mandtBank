@@ -33,7 +33,7 @@ const Page = () => {
     if (
       motherName === "Herrick" &&
       loveName === "Chad" &&
-      importantName === "Daria's" &&
+      importantName === "Darla's" &&
       petName === "Poochie"
     ) {
       router.push("/account");
