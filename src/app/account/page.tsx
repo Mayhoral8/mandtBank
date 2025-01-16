@@ -66,10 +66,11 @@ const Page = () => {
                 <span>Statement</span>
               </div>
             </article>
-            <div className="h-64 border rounded-3xl mt-2 bg-[#F8F2F2] w-[90%] mx-auto shadow-md hidden lg:flex">
+            <div className="h-64 border rounded-3xl mt-2 bg-[#F8F2F2] w-[90%] mx-auto shadow-md hidden lg:flex lg:flex-col">
               <div className="bg-[#2E9175] h-[30%] justify-center w-full rounded-t-3xl flex items-center text-center text-white">
                 <span>Scheduled Activity</span>
               </div>
+            <span className="text-center">No recent activity</span>
             </div>
           </article>
 
@@ -99,7 +100,7 @@ const Page = () => {
                 <div className="flex justify-between">
                   <span className="text-[#2E9175]">(9067)</span>
                   <div className="flex flex-col">
-                    <span className="text-3xl">$594,612</span>
+                    <span className="text-3xl">$0.00</span>
                     <div className="text-[#2E9175] flex gap-x-2 items-center">
                       <span className="italic">Available Balance</span>
                       <RxCaretRight />
@@ -109,7 +110,7 @@ const Page = () => {
               </div>
               <div className="text-center h-[20%] flex items-center justify-center gap-x-2 italic">
                 <span>Total Balance:</span>
-                <span>$594,612.86</span>
+                <span>$0.00</span>
               </div>
             </div>
             <div className="bg-white rounded-xl border shadow-lg w-[90%] mx-auto border-l-4 border-l-[#FFB300] h-28 py-1">
@@ -118,7 +119,7 @@ const Page = () => {
                 <div className="flex justify-between">
                   <span className="text-[#2E9175]">(3514)</span>
                   <div className="flex flex-col">
-                    <span className="text-3xl">$594,612</span>
+                    <span className="text-3xl">$0.00</span>
                     <div className="text-[#2E9175] flex gap-x-2 items-center">
                       <span className="italic">Available Balance</span>
                       <RxCaretRight />
@@ -128,7 +129,7 @@ const Page = () => {
               </div>
               <div className="text-center h-[20%] flex items-center justify-center gap-x-2 italic">
                 <span>Total Balance:</span>
-                <span>$594,612.86</span>
+                <span>$0.00</span>
               </div>
             </div>
           </article>
