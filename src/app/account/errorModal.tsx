@@ -11,7 +11,7 @@ const ErrorModal: React.FC<props> = ({ showModal, setShowModal }) => {
   if (showModal) {
     return (
       <div className="flex fixed items-center justify-center top-0 bottom-0 left-0 right-0 backdrop-blur-sm">
-        <section className="bg-[#F8F2F2] w-[25%] h-[35%] flex flex-col items-center justify-evenly text-center text-lg">
+        <section className="bg-[#F8F2F2] lg:w-[25%] w-[80%]  h-[35%] flex flex-col items-center justify-evenly text-center text-lg">
           <BiSolidErrorCircle className="text-[#FFCD0F] text-4xl" />
           <span className="font-light text-[#5D5C5C] px-10">
             You are unable to send money at this time!{" "}
