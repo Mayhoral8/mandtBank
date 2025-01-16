@@ -5,6 +5,7 @@ import { BiTransfer } from "react-icons/bi";
 import { IoWallet } from "react-icons/io5";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { RxCaretRight } from "react-icons/rx";
+import ErrorModal from "./errorModal";
 
 const Page = () => {
   function formatDate(date: Date) {
@@ -30,9 +31,18 @@ const Page = () => {
 
   const today = new Date(year, month, day);
 
+  const [showModal, setShowModal] = useState(false);
+  const handleShowModal = () => {
+    setShowModal(true);
+    setTimeout(() => {
+      setShowModal(false);
+    }, 3000);
+  };
+
   return (
     <main>
       <Navbar />
+      <ErrorModal showModal={showModal} setShowModal={setShowModal} />
       <section className="flex flex-col gap-y-4 py-4 px-4">
         <span className="text-center">{formatDate(today)}</span>
 
@@ -46,22 +56,30 @@ const Page = () => {
 
           <div className="flex flex-col justify-center items-center bg-white rounded-xl border shadow-lg p-4 w-[90%] mx-auto">
             <span>Available Balance</span>
-            <span className="text-5xl text-[#2E9175] font-bold">$594,612</span>
+            <span className="text-5xl text-[#2E9175] font-bold">
+              $594,612.86
+            </span>
           </div>
         </article>
 
         <section className="flex flex-col lg:grid lg:grid-cols-2">
           <article className="lg:order-2">
             <article className="grid grid-cols-3 ">
-              <div className="flex flex-col items-center">
+              <div
+                className="flex flex-col items-center cursor-pointer"
+                onClick={handleShowModal}
+              >
                 <BiTransfer className="text-[#2E9175] text-2xl" />
                 <span>Transfer</span>
               </div>
-              <div className="flex flex-col items-center">
+              <div
+                className="flex flex-col items-center cursor-pointer"
+                onClick={handleShowModal}
+              >
                 <IoWallet className="text-[#2E9175] text-2xl" />
                 <span>Pay Bills</span>
               </div>
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center cursor-pointer">
                 <IoDocumentTextOutline className="text-[#2E9175] text-2xl" />
                 <span>Statement</span>
               </div>
@@ -70,7 +88,7 @@ const Page = () => {
               <div className="bg-[#2E9175] h-[30%] justify-center w-full rounded-t-3xl flex items-center text-center text-white">
                 <span>Scheduled Activity</span>
               </div>
-            <span className="text-center">No recent activity</span>
+              <span className="text-center">No recent activity</span>
             </div>
           </article>
 
@@ -81,7 +99,7 @@ const Page = () => {
                 <div className="flex justify-between">
                   <span className="text-[#2E9175]">(3632)</span>
                   <div className="flex flex-col">
-                    <span className="text-3xl">$594,612</span>
+                    <span className="text-3xl">$594,612.86</span>
                     <div className="text-[#2E9175] flex gap-x-2 items-center">
                       <span className="italic">Available Balance</span>
                       <RxCaretRight />
